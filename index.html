@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Lists</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            min-width: 1400px;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #2a2a2a, #3a3a3a, #2a2a2a);
+            background-size: 200% auto;
+            padding: 20px 0;
+            text-align: center;
+            animation: gradient 3s linear infinite;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% center; }
+            100% { background-position: 100% center; }
+        }
+        
+        h1 {
+            color: #b8860b;
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #000;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #b8860b;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(184, 134, 11, 0.6);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .list-box {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            height: auto;
+            overflow: visible;
+        }
+        
+        .list-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #b8860b;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #444;
+            text-align: center;
+        }
+        
+        .name-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .name-list li {
+            padding: 5px 0;
+            border-bottom: 1px dotted #444;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .vocation {
+            width: 20%;
+            color: #a0a0a0;
+            font-weight: bold;
+        }
+        
+        .level {
+            width: 15%;
+            text-align: center;
+            color: #ffcc00;
+        }
+        
+        .name {
+            width: 65%;
+            color: #e0e0e0;
+        }
+        
+        .online {
+            color: #00aa00;
+        }
+        
+        .offline {
+            color: #aa0000;
+        }
+        
+        .leader {
+            color: #ff5555;
+            font-weight: bold;
+        }
+        
+        .member {
+            color: #55aaff;
+            font-weight: bold;
+        }
+        
+        .invited {
+            color: #aa55ff;
+            font-style: italic;
+        }
+        
+        .djinn-title {
+            color: #b8860b;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .djinn-subtitle {
+            color: #ffcc00;
+            text-align: center;
+            margin: 5px 0;
+            font-style: italic;
+        }
+        
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0;
+            font-size: 12px;
+        }
+        
+        .item-name {
+            width: 70%;
+        }
+        
+        .item-value {
+            width: 30%;
+            text-align: right;
+            color: #00aa00;
+        }
+        
+        .djinn-divider {
+            border-top: 1px solid #444;
+            margin: 10px 0;
+        }
+        
+        .special-item {
+            color: #ff9900;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: linear-gradient(90deg, #2a2a2a, #3a3a3a, #2a2a2a);
+            background-size: 200% auto;
+            padding: 15px 0;
+            text-align: center;
+            animation: gradient 3s linear infinite reverse;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #b8860b;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        .footer-text {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; text-shadow: 0 0 5px #b8860b; }
+            100% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TIBIA LISTS</h1>
+    </header>
+    
+    <div class="logo-container">
+        <img src="img/fazol.png" alt="Fazol Logo" class="logo">
+    </div>
+    
+    <div class="container">
+        <!-- Enemy List -->
+        <div class="list-box">
+            <div class="list-title">ENEMY LIST</div>
+            <ul class="name-list">
+                <li class="leader">
+                    <span class="vocation">Leader</span>
+                    <span class="level"></span>
+                    <span class="name">Archer Ravok (kkkkkkkkk)</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">81</span>
+                    <span class="name offline">Offline</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">73</span>
+                    <span class="name offline">Indio (Hail Malvera)</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">83</span>
+                    <span class="name online">Mano War</span>
+                </li>
+                <li>
+                    <span class="vocation">EK</span>
+                    <span class="level">75</span>
+                    <span class="name online">Manowar</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">75</span>
+                    <span class="name offline">Sancho Panza</span>
+                </li>
+                <li class="leader">
+                    <span class="vocation">Vice-Leader</span>
+                    <span class="level"></span>
+                    <span class="name"></span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">75</span>
+                    <span class="name online">Bissunga</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">64</span>
+                    <span class="name online">Ratsu Karys (Buksha)</span>
+                </li>
+                <li>
+                    <span class="vocation">ED</span>
+                    <span class="level">74</span>
+                    <span class="name online">Rolox (Most Wanted)</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">60</span>
+                    <span class="name online">Sdzas</span>
+                </li>
+                <li>
+                    <span class="vocation">ED</span>
+                    <span class="level">56</span>
+                    <span class="name online">Agnis</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">58</span>
+                    <span class="name online">Archangel Mort</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">44</span>
+                    <span class="name offline">Bhagavad Gita (BEEAT IT)</span>
+                </li>
+                <li>
+                    <span class="vocation">ED</span>
+                    <span class="level">59</span>
+                    <span class="name online">Bispo Do Balao</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">58</span>
+                    <span class="name offline">Blak (Hawk)</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">59</span>
+                    <span class="name online">Dsnitz (Bugaba)</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">57</span>
+                    <span class="name online">Etoo (HAHA)</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">65</span>
+                    <span class="name online">Macaco Louco</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">52</span>
+                    <span class="name offline">Macho Vei</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">47</span>
+                    <span class="name offline">Perrito (Destemido)</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">53</span>
+                    <span class="name online">Sartunita (Malafriks)</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">60</span>
+                    <span class="name online">Setzer</span>
+                </li>
+                <li>
+                    <span class="vocation">ED</span>
+                    <span class="level">45</span>
+                    <span class="name offline">Silent Core (Geleiao)</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">54</span>
+                    <span class="name offline">Vampirao (Geleiao)</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">64</span>
+                    <span class="name offline">Vicenzi</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">45</span>
+                    <span class="name offline">Xevinho Peytuim</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Friend List -->
+        <div class="list-box">
+            <div class="list-title">FRIEND LIST</div>
+            <ul class="name-list">
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">78</span>
+                    <span class="name online">Thalling Tisoka</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">29</span>
+                    <span class="name online">Asterix</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">40</span>
+                    <span class="name online">Camarada Boules</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">51</span>
+                    <span class="name online">Dhiggok</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">69</span>
+                    <span class="name online">Holanda</span>
+                </li>
+                <li>
+                    <span class="vocation">ED</span>
+                    <span class="level">61</span>
+                    <span class="name online">Pedrin Badboy</span>
+                </li>
+                <li class="member">
+                    <span class="vocation">EK</span>
+                    <span class="level">64</span>
+                    <span class="name">Asteck</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">39</span>
+                    <span class="name online">Camarada Enus</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">79</span>
+                    <span class="name online">Camarada Nariz</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">31</span>
+                    <span class="name online">Camarada Primo</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">39</span>
+                    <span class="name online">City Girl</span>
+                </li>
+                <li>
+                    <span class="vocation">EK</span>
+                    <span class="level">48</span>
+                    <span class="name online">Doisdee Tisoka</span>
+                </li>
+                <li>
+                    <span class="vocation">ED</span>
+                    <span class="level">38</span>
+                    <span class="name online">Ed Returns</span>
+                </li>
+                <li>
+                    <span class="vocation">MS</span>
+                    <span class="level">50</span>
+                    <span class="name online">Patolin Maconha</span>
+                </li>
+                <li>
+                    <span class="vocation">RP</span>
+                    <span class="level">58</span>
+                    <span class="name online">Tatuteba</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Camarada Thales</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Camarada Noie</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Clandestino</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Lukinha Cupreto</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Camarada Esfiha</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Lukao</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Camarada Will</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Big Black Dog</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Volin Rabei</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Patinho Amarelo</span>
+                </li>
+                <li class="invited">
+                    <span class="vocation"></span>
+                    <span class="level"></span>
+                    <span class="name">Boombap</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Hunted List -->
+        <div class="list-box">
+            <div class="list-title">HUNTED LIST</div>
+            <ul class="name-list">
+                <li>Black Dragon</li>
+                <li>Demon Skeleton</li>
+                <li>Giant Spider</li>
+                <li>Lich King</li>
+                <li>Minotaur Guard</li>
+                <li>Rotworm Queen</li>
+                <li>Vampire Lord</li>
+            </ul>
+        </div>
+        
+        <!-- Blue Djinns -->
+        <div class="list-box">
+            <div class="list-title">BLUE DJINNS</div>
+            <div class="djinn-title">Blue Djinns Compram</div>
+            <div class="djinn-subtitle">Nah'Bob</div>
+            <div class="djinn-subtitle">Armas e Equipamentos!</div>
+            
+            <div class="item-row"><span class="item-name">Angelic Axe</span><span class="item-value">5 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Blue Robe</span><span class="item-value">10 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Bonelord Shield</span><span class="item-value">1 200 gp</span></div>
+            <div class="item-row"><span class="item-name">Boots of Haste</span><span class="item-value">30 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Broadsword</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Butcher's Axe</span><span class="item-value">18 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Crown Armor</span><span class="item-value">12 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Crown Helmet</span><span class="item-value">2 500 gp</span></div>
+            <div class="item-row"><span class="item-name">Crown Legs</span><span class="item-value">12 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Crown Shield</span><span class="item-value">8 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Crusader Helmet</span><span class="item-value">6 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Dragon Lance</span><span class="item-value">9 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Dragon Shield</span><span class="item-value">4 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Earth Spike Sword</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Earth War Hammer</span><span class="item-value">1 200 gp</span></div>
+            <div class="item-row"><span class="item-name">Energy Spike Sword</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Energy War Hammer</span><span class="item-value">1 200 gp</span></div>
+            <div class="item-row"><span class="item-name">Fiery Spike Sword</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Fiery War Hammer</span><span class="item-value">1 200 gp</span></div>
+            <div class="item-row"><span class="item-name">Fire Axe</span><span class="item-value">8 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Fire Sword</span><span class="item-value">4 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Glorious Axe</span><span class="item-value">3 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Guardian Shield</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Ice Rapier</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Icy Spike Sword</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Icy War Hammer</span><span class="item-value">1 200 gp</span></div>
+            <div class="item-row"><span class="item-name">Noble Armor</span><span class="item-value">900 gp</span></div>
+            <div class="item-row"><span class="item-name">Obsidian Lance</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Phoenix Shield</span><span class="item-value">16 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Queen's Sceptre</span><span class="item-value">20 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Royal Helmet</span><span class="item-value">30 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Shadow Sceptre</span><span class="item-value">10 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Spike Sword</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Thaian Sword</span><span class="item-value">16 000 gp</span></div>
+            <div class="item-row"><span class="item-name">War Hammer</span><span class="item-value">1 200 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-subtitle">Haroun</div>
+            <div class="djinn-subtitle">Itens Mágicos!</div>
+            
+            <div class="item-row"><span class="item-name">Axe Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Bronze Amulet</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Club Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Elven Amulet</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Garlic Necklace</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Life Crystal</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Magic Light Wand</span><span class="item-value">35 gp</span></div>
+            <div class="item-row"><span class="item-name">Mind Stone</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Orb</span><span class="item-value">750 gp</span></div>
+            <div class="item-row"><span class="item-name">Power Ring</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Stealth Ring</span><span class="item-value">200 gp</span></div>
+            <div class="item-row"><span class="item-name">Stone Skin Amulet</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Sword Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Cosmic Energy</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Decay</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Defiance</span><span class="item-value">6 500 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Draconia</span><span class="item-value">1 500 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Dragonbreath</span><span class="item-value">200 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Everblazing</span><span class="item-value">6 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Inferno</span><span class="item-value">3 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Starstorm</span><span class="item-value">3 600 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Voodoo</span><span class="item-value">4 400 gp</span></div>
+            <div class="item-row"><span class="item-name">Wand of Vortex</span><span class="item-value">100 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-title">Blue Djinns Vendem</div>
+            <div class="djinn-subtitle">Nah'Bob</div>
+            <div class="djinn-subtitle">Armas e Equipamentos</div>
+            
+            <div class="item-row"><span class="item-name">Bonelord Shield</span><span class="item-value">7 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Noble Armor</span><span class="item-value">8 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Obsidian Lance</span><span class="item-value">3 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Spike Sword</span><span class="item-value">8 000 gp</span></div>
+            <div class="item-row"><span class="item-name">War Hammer</span><span class="item-value">10 000 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-subtitle">Haroun</div>
+            <div class="djinn-subtitle">Itens Mágicos</div>
+            
+            <div class="item-row"><span class="item-name">Axe Ring</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Bronze Amulet</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Club Ring</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Elven Amulet</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Garlic Necklace</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Magic Light Wand</span><span class="item-value">120 gp</span></div>
+            <div class="item-row"><span class="item-name">Power Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Stealth Ring</span><span class="item-value">5 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Stone Skin Amulet</span><span class="item-value">25 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Sword Ring</span><span class="item-value">500 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-subtitle special-item">Itens Especiais:</div>
+            
+            <div class="item-row"><span class="item-name">Enchanted Chicken Wing</span><span class="item-value">1 Boots of Haste</span></div>
+            <div class="item-row"><span class="item-name">Flask of Warrior's Sweat</span><span class="item-value">4 Warrior Helmets</span></div>
+            <div class="item-row"><span class="item-name">Magic Sulphur</span><span class="item-value">3 Fire Swords</span></div>
+            <div class="item-row"><span class="item-name">Spirit Container (Fighting Spirit)</span><span class="item-value">2 Royal Helmets</span></div>
+        </div>
+        
+        <!-- Green Djinns -->
+        <div class="list-box">
+            <div class="list-title">GREEN DJINNS</div>
+            <div class="djinn-title">Green Djinns Compram</div>
+            <div class="djinn-subtitle">Alesar</div>
+            <div class="djinn-subtitle">Armas e Equipamentos!</div>
+            
+            <div class="item-row"><span class="item-name">Ancient Shield</span><span class="item-value">900 gp</span></div>
+            <div class="item-row"><span class="item-name">Black Shield</span><span class="item-value">800 gp</span></div>
+            <div class="item-row"><span class="item-name">Bonebreaker</span><span class="item-value">10 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Dark Armor</span><span class="item-value">400 gp</span></div>
+            <div class="item-row"><span class="item-name">Dark Helmet</span><span class="item-value">250 gp</span></div>
+            <div class="item-row"><span class="item-name">Dragon Hammer</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Dreaded Cleaver</span><span class="item-value">15 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Earth Knight Axe</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Energy Knight Axe</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Fiery Knight Axe</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Giant Sword</span><span class="item-value">17 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Haunted Blade</span><span class="item-value">8 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Icy Knight Axe</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Knight Armor</span><span class="item-value">5 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Knight Axe</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Knight Legs</span><span class="item-value">5 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Mystic Turban</span><span class="item-value">150 gp</span></div>
+            <div class="item-row"><span class="item-name">Onyx Flail</span><span class="item-value">22 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Ornamented Axe</span><span class="item-value">20 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Poison Dagger</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Scimitar</span><span class="item-value">150 gp</span></div>
+            <div class="item-row"><span class="item-name">Serpent Sword</span><span class="item-value">900 gp</span></div>
+            <div class="item-row"><span class="item-name">Skull Staff</span><span class="item-value">6 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Strange Helmet</span><span class="item-value">500 gp</span></div>
+            <div class="item-row"><span class="item-name">Titan Axe</span><span class="item-value">4 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Tower Shield</span><span class="item-value">8 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Vampire Shield</span><span class="item-value">15 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Warrior Helmet</span><span class="item-value">5 000 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-subtitle">Yaman</div>
+            <div class="djinn-subtitle">Itens Mágicos!</div>
+            
+            <div class="item-row"><span class="item-name">Ankh</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Dragon Necklace</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Dwarven Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Energy Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Glacial Rod</span><span class="item-value">6 500 gp</span></div>
+            <div class="item-row"><span class="item-name">Hailstorm Rod</span><span class="item-value">3 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Life Ring</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Might Ring</span><span class="item-value">250 gp</span></div>
+            <div class="item-row"><span class="item-name">Moonlight Rod</span><span class="item-value">200 gp</span></div>
+            <div class="item-row"><span class="item-name">Muck Rod</span><span class="item-value">6 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Mysterious Fetish</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Necrotic Rod</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Northwind Rod</span><span class="item-value">1 500 gp</span></div>
+            <div class="item-row"><span class="item-name">Protection Amulet</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Ring of Healing</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Silver Amulet</span><span class="item-value">50 gp</span></div>
+            <div class="item-row"><span class="item-name">Snakebite Rod</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Springsprout Rod</span><span class="item-value">3 600 gp</span></div>
+            <div class="item-row"><span class="item-name">Strange Talisman</span><span class="item-value">30 gp</span></div>
+            <div class="item-row"><span class="item-name">Terra Rod</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Time Ring</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Underworld Rod</span><span class="item-value">4 400 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-title">Green Djinns Vendem</div>
+            <div class="djinn-subtitle">Alesar</div>
+            <div class="djinn-subtitle">Armas e Equipamentos</div>
+            
+            <div class="item-row"><span class="item-name">Ancient Shield</span><span class="item-value">5 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Dark Armor</span><span class="item-value">1 500 gp</span></div>
+            <div class="item-row"><span class="item-name">Dark Helmet</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Ice Rapier</span><span class="item-value">5 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Serpent Sword</span><span class="item-value">6 000 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-subtitle">Yaman</div>
+            <div class="djinn-subtitle">Itens Mágicos</div>
+            
+            <div class="item-row"><span class="item-name">Dragon Necklace</span><span class="item-value">1 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Dwarven Ring</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Energy Ring</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Life Ring</span><span class="item-value">900 gp</span></div>
+            <div class="item-row"><span class="item-name">Might Ring</span><span class="item-value">25 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Protection Amulet</span><span class="item-value">700 gp</span></div>
+            <div class="item-row"><span class="item-name">Ring of Healing</span><span class="item-value">2 000 gp</span></div>
+            <div class="item-row"><span class="item-name">Strange Talisman</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Silver Amulet</span><span class="item-value">100 gp</span></div>
+            <div class="item-row"><span class="item-name">Time Ring</span><span class="item-value">2 000 gp</span></div>
+            
+            <div class="djinn-divider"></div>
+            
+            <div class="djinn-subtitle special-item">Itens especiais:</div>
+            
+            <div class="item-row"><span class="item-name">Enchanted Chicken Wing</span><span class="item-value">1 Boots of Haste</span></div>
+            <div class="item-row"><span class="item-name">Flask of Warrior's Sweat</span><span class="item-value">4 Warrior Helmets</span></div>
+            <div class="item-row"><span class="item-name">Magic Sulphur</span><span class="item-value">3 Fire Swords</span></div>
+            <div class="item-row"><span class="item-name">Spirit Container (Fighting Spirit)</span><span class="item-value">2 Royal Helmets</span></div>
+        </div>
+        
+        <!-- Acessos -->
+        <div class="list-box">
+            <div class="list-title">ACESSOS OBRIGATÓRIOS</div>
+            <ul class="name-list">
+                <li>GOROMA</li>
+                <li>BANUTA</li>
+                
+                
+            </ul>
+        </div>
+        
+        <!-- Chaves -->
+        <div class="list-box">
+            <div class="list-title">CHAVES</div>
+            <ul class="name-list">
+                <li>Blue Djinn</li>
+                <li>Green Djinn</li>
+                <li>Rashid</li>
+                <li>Shadow Key</li>
+                <li>Silver Key</li>
+                <li>Thieves Key</li>
+                <li>Warlock Key</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="footer-text">Tibia Lists © 2023</p>
+        <p class="footer-text">Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
